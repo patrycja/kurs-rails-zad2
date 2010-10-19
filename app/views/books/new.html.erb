@@ -1,0 +1,13 @@
+<h1>Dodaj nowa ksiazke</h1>
+<%= form_tag :action => 'create' %>
+<p><label for="book_title">Tytul</label>:
+<%= text_field 'book', 'title' %></p>
+<p><label for="book_price">Cena</label>:
+<%= text_field 'book', 'price' %></p>
+<p><label for="book_subject">Temat</label>:
+<%= collection_select(:book,:subject_id,@subjects,:id,:name) %></p>
+<p><label for="book_description">Krotki opis</label><br/>
+<%= text_area 'book', 'description' %></p>
+<%= submit_tag "Stworz" %>
+<%= form_tag %>
+<%= link_to 'Powrot', {:action => 'index'} %>
